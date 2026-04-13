@@ -1,0 +1,65 @@
+{
+  "name": "aliziodev/payid-ipaymu",
+  "description": "iPaymu driver for PayID - Laravel Payment Orchestrator",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "payment",
+    "ipaymu",
+    "payid",
+    "indonesia"
+  ],
+  "authors": [
+    {
+      "name": "Alizio Dev",
+      "email": "hello@aliziodev.com"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "aliziodev/payid": "^0.1",
+    "illuminate/http": "^11.0|^12.0|^13.0",
+    "illuminate/support": "^11.0|^12.0|^13.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^9.0|^10.0|^11.0",
+    "pestphp/pest": "^3.0|^4.0",
+    "pestphp/pest-plugin-laravel": "^3.0|^4.0",
+    "laravel/pint": "^1.0",
+    "phpstan/phpstan": "^2.0",
+    "larastan/larastan": "^3.0",
+    "mockery/mockery": "^1.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Aliziodev\\PayIdIpaymu\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Aliziodev\\PayIdIpaymu\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Aliziodev\\PayIdIpaymu\\IpaymuServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/pest --configuration=phpunit.xml",
+    "lint": "vendor/bin/pint",
+    "lint-check": "vendor/bin/pint --test",
+    "analyse": "vendor/bin/phpstan analyse"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
